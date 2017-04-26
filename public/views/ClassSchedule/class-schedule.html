@@ -1,0 +1,220 @@
+  <style>
+    .panel {
+      margin: 20px;
+    }
+  </style>
+
+  <div class = "row">
+      <div class = "col-md-12">
+          <h2 class = "text-center">Class Schedule</h2>
+      </div>
+  </div>
+  
+  <div class = "row">
+    <div class = "col-md-2">
+      <div class="list-group">
+        <a href ng-class="{ active:isSelected(1) }" ng-click="selectTab(1)" class="list-group-item">Monday</a>
+        <a href ng-class="{ active:isSelected(2) }" ng-click="selectTab(2)" class="list-group-item">Tuesday</a>
+        <a href ng-class="{ active:isSelected(3) }" ng-click="selectTab(3)" class="list-group-item">Wednesday</a>
+        <a href ng-class="{ active:isSelected(4) }" ng-click="selectTab(4)" class="list-group-item">Thursday</a>
+        <a href ng-class="{ active:isSelected(5) }" ng-click="selectTab(5)" class="list-group-item">Friday</a>
+        <a href ng-class="{ active:isSelected(6) }" ng-click="selectTab(6)" class="list-group-item">Saturday</a>
+      </div>
+    </div>
+    <div class = "col-md-10">
+		<div class="panel col-md-5" ng-show="isSelected(1)" ng-repeat = "class in mondays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+          <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+      
+
+    </div>
+
+		<div class="panel col-md-5" ng-show="isSelected(2)" ng-repeat = "class in tuesdays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+           <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+		</div>
+		<div class="panel col-md-5" ng-show="isSelected(3)" ng-repeat = "class in wednesdays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+           <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+		</div>
+
+		<div class="panel col-md-5" ng-show="isSelected(4)" ng-repeat = "class in thursdays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+           <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+
+		</div>		
+		<div class="panel col-md-5" ng-show="isSelected(5)" ng-repeat = "class in fridays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+           <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+		</div>		
+		<div class="panel col-md-5" ng-show="isSelected(6)" ng-repeat = "class in saturdays">
+        <div class = "sign-up-content">
+          <h4 class = "text-center">Instructor</h4>
+          
+          <div class = "instructor-section">
+          <img class = "instructor-pic center-block" ng-src="images/{{class.instructor}}.jpeg" alt="" />
+            <div class = "instructor-name">{{class.instructor}}</div>
+          </div>
+          
+      <table class="table table-striped">
+        <thead> 
+          <h5 class = "text-center"> Class Information </h5> 
+        </thead>
+        
+         <tbody> 
+           <tr><th scope="row">Class:</th> <td>{{class.lesson}}</td></tr> 
+           <tr><th scope="row">Level:</th> <td>{{class.level}}</td></tr> 
+           <tr><th scope="row">Duration:</th> <td>{{class.duration}}</td></tr> 
+           <tr><th scope="row">Start Date:</th> <td>{{class.datestart | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">End Date:</th> <td>{{class.dateend | date: 'fullDate'}}</td></tr> 
+           <tr><th scope="row">Time</th> <td>{{class.time | date:'shortTime'}} - {{class.timeend | date: 'shortTime'}}</td></tr> 
+         </tbody>
+        
+       </table>
+          
+          <!-- <a class = "btn-registration">Register</a> -->
+          
+           <a href ng-click = "register(class._id,onlineuser.username)" class = "btn btn-primary center-block">Register</a>
+          
+        </div>
+		</div>
+      
+    </div>
+  </div>
+      </div>
+  

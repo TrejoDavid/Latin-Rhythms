@@ -1,0 +1,57 @@
+<style>
+	img {
+		width: 80%;
+	}
+
+
+	.tweets {
+		background: white;
+		border-radius: 20px;
+		border: 3px solid black;
+	}
+
+	.media {
+		background: url('https://abs.twimg.com/images/themes/theme1/bg.png');
+		background-size: contain;
+		margin: 10px;
+		border: 3px solid black;
+
+
+	}
+</style>
+
+<h2>Twitter Page</h2>
+
+<h5>{{onlineuser.picture}}</h5>
+
+
+
+
+<div class = "row col-md-5 tweets">
+
+
+<div ng-repeat = "user in users">
+<!-- 	<h2>{{user.created_at | date: 'fullDate'}}</h2> -->
+	
+		<div class="media">
+		  <div class="media-left media-middle">
+		    <a ng-href="http://www.twitter.com/{{user.user.screen_name}}">
+		      <img class="media-object" ng-src="{{user.user.profile_image_url_https}}" alt="...">
+		    </a>
+		  </div>
+		  <div class="media-body">
+		    <h4 class="media-heading">{{user.user.name}}<a href = "http://www.twitter.com/{{user.user.screen_name}}">@{{user.user.screen_name}}</a>
+			</h4>
+		    {{user.text}}
+		  </div>
+		</div>
+</div>	
+
+
+<div id="instafeed"></div>
+
+
+</div>
+
+
+

@@ -1,0 +1,283 @@
+<style>
+
+input::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: white !important;  
+}
+
+textarea::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+textarea:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+textarea::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+textarea:-ms-input-placeholder {  
+color: white !important;  
+}
+
+
+
+  .container-fluid {
+    background: #f5f6fb;
+  }
+
+.classroom {
+  border-bottom: 2px solid #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.classroom > ul.nav-pills > li {
+  background: none;
+}
+
+.classroom > ul.nav-pills > li > a {
+  color: #aeb3c7;
+}
+
+#student-list-section > .col-md-offset-1 > img.student-picture {
+  height: 40px;
+  display: inline-block;
+}
+
+#student-list-section > .col-md-offset-1 > span.user-name {
+   font-weight: bold;
+   padding-left: 40px;
+}
+
+
+.user-btn {
+  border-radius: 10px;
+  border: 5px solid #337ab7;
+  background: #fff;
+  color: #337ab7;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.student {
+  margin: 10px 0 0 0;
+}
+
+
+#classroom-section {
+  box-shadow: 5px 4px 20px #888888;
+}
+
+#classroom-section > .classroom-overlay > div.classroom-picture {
+    width: 900px;
+    height: 400px;
+    margin-top: 30px;
+    /*opacity: 0.5;*/
+    /*background: url('https://scontent.ford1-1.fna.fbcdn.net/t31.0-8/14361337_709070665913786_3625186847295669624_o.jpg');*/
+    background: url("https://scontent.ford1-1.fna.fbcdn.net/t31.0-8/14361337_709070665913786_3625186847295669624_o.jpg") center  / 100% 100% no-repeat;
+}
+
+/*#classroom-section > .classroom-overlay > div.classroom-picture:hover,
+#classroom-section > .classroom-overlay > .classroom-picture > input[type="text"] {
+  background: rgba(222, 222, 222, 0.49);
+
+}*/
+
+
+.hello {
+ background: white !important;
+ opacity: 1;
+}
+
+
+#classroom-section > .classroom-overlay,
+#classroom-section > .classroom-overlay > .classroom-picture {
+  position: relative;
+}
+
+
+#classroom-section > .classroom-overlay > .classroom-picture > textarea,
+#classroom-section > .classroom-overlay > .classroom-picture > input[type="text"]{
+  background: rgba(0,0,255,0.5);
+  border: none;
+  color: #eee;
+  font-size: 20px;
+}
+
+#classroom-section > .classroom-overlay > .classroom-picture > input[type="text"]{
+  position: absolute;
+  top: 30px;
+}
+
+#classroom-section > .classroom-overlay > .classroom-picture > textarea {
+  position: absolute;
+  top: 70px;
+  height: 80%;
+}
+
+#classroom-section > .classroom-information {
+  max-width: 100%;
+  border: 0.2px solid #fff;
+  background: #fff;
+  margin-left: 0;
+}
+
+#classroom-section > .classroom-information > h2 {
+  color: #3a5964;
+}
+
+#classroom-section > .classroom-overlay > .classroom-information > .col-md-3 > span.lesson {
+  color: #aeb3c7;
+  font-weight: bold;
+  border-bottom: 0.5px solid #aeb3c7;
+  padding-bottom: 5px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
+#instructor-section {
+  background: #fff;
+}
+
+#instructor-section > .teacher-pic {
+  margin-top: 20px;
+}
+
+
+/*.texting {
+  position: absolute;
+}*/
+
+/*  .nav-pills>li:hover {`
+    float: left;
+    border-bottom: 2px solid black;
+}*/
+
+
+/*.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+     background-color: none !important;
+}*/
+/* */
+
+
+
+</style>
+
+<!-- Classroom Content -->
+<div class = "classroom col-md-8">
+  <!-- Navigation -->
+    <ul class="nav nav-pills"> 
+      <li role="presentation"><a href="#">Class Discussion</a></li> 
+      <li role="presentation"><a href="#">Music Request</a></li> 
+      <li role="presentation"><a href="#">Message Instructor</a></li> 
+    </ul>
+
+<div class = "row col-md-12">
+    <div id = "classroom-section" >
+      <!-- <img class = "classroom-picture img-responsive" src="https://scontent.ford1-1.fna.fbcdn.net/t31.0-8/14361337_709070665913786_3625186847295669624_o.jpg" alt=""> -->
+
+    <div class = "classroom-overlay">
+
+      <div class = "classroom-picture img-responsive">
+         <input type="text" class="form-control" placeholder="Subject">
+         <textarea class="form-control" rows="10" placeholder="Write your message..."></textarea>
+      </div>
+
+        <div class = "row classroom-information">
+
+            <div class = "col-md-3">
+              <span class = "lesson">Instructor <img src="https://cdn3.iconfinder.com/data/icons/black-easy/512/538474-user_512x512.png" style = "width: 20px"alt=""></span>
+              <h4>David Trejo</h4>
+            </div>
+
+            <div class = "col-md-3">
+              <span class = "lesson">Lesson <img src="https://cdn2.iconfinder.com/data/icons/university-set-5/512/21-512.png" style = "width: 20px"alt=""></span>
+              <h4>Salsa Basic 1</h4>
+            </div> 
+
+            <div class = "col-md-3">
+              <span class = "lesson">Date <img src="https://cdn4.iconfinder.com/data/icons/communication-extras/512/Calendar-512.png" style = "width: 20px" alt=""></span>
+              <h4>December 24</h4>
+            </div>
+
+            <div class = "col-md-3">
+              <span class = "lesson">Time <img src="https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-013_time_clock-512.png" alt="" style = "width: 20px"></span>
+              <h4>9:00am - 10:00am</h4>
+            </div> 
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+<!-- Users Content/List -->
+<div class = "col-md-4" id = "instructor-section">
+  <!-- User(Instructor) Picture -->
+  <img class = "img-responsive img-circle teacher-pic" ng-src="images/{{classroom.instructor}}.jpeg" alt="" />
+  <h2 class = "text-center">{{classroom.instructor}}</h2>
+  <a id = "testing" class = "btn btn-lg btn-primary center-block">Message</a>
+
+
+
+<div class = "row col-md-12" id = "student-list-section">
+    <hr> <!-- Horizontal Line -->
+    <h4 class = "text-center">Registed Students</h4>
+    <div class = "col-md-offset-1 student" ng-repeat = "(key,value) in classroom.students_registered">
+      <img class = "img-responsive img-circle student-picture" ng-src="{{value.picture}}" alt="" /> 
+      <span class = "user-name">{{value.firstname}} {{value.lastname}}</span>
+      <span class = "btn btn-md btn-primary pull-right user-btn">View Profile</span>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+  
+//   $(document).ready(function(){
+//     $(".classroom-picture").click(function(){
+//         $(this).hide();
+//     });
+// });
+
+
+
+
+$(document).ready(function(){
+    $("#testing").click(function(){
+        $("#classroom-section > .classroom-overlay > .classroom-picture").addClass("hello");
+    });
+});
+
+</script>
+
+
+<!-- <div class = "col-md-8" id = "classroom-section">
+
+
+</div> -->
+
+<!--- Registered Students -->
+
+ 
+
+
+

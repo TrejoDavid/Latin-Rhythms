@@ -1,0 +1,145 @@
+<!--   <div class = "row">
+	<div class = "col-md-3">
+		<img src="{{userEdit.picture}}" class = "img-circle" alt="">
+	</div>
+	<div class = "col-md-8 col-md-offset-1">
+		<h2>{{userEdit.username}}</h2>
+      <div class = "row">
+        <div class = "col-md-3">
+            <div>Name:</div>
+            <div>Location: </div>
+            <div>Date of Birth:</div>
+            <div>E-mail:</div>
+            <div>Member Since:</div>
+        </div>
+        <div class = "col-md-3">
+          <div>{{userEdit.firstname}}  {{userEdit.lastname}}</div>
+          <div>{{userEdit.location}}</div>
+          <div>{{userEdit.birth | date: 'fullDate'}}</div>
+          <div>{{userEdit.email}}</div>
+          <div>{{userEdit.joined | date: 'fullDate'}}</div>
+        </div>
+      </div>
+    
+	</div>
+</div>
+
+
+ -->
+
+<style>
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.user-info-container {
+  color: white;
+  text-shadow: 1px 1px black;
+  background: #ffffffc2;
+}
+
+.user-main-header{
+  background: 0px 0px;
+}
+
+.user-pic-background {
+  -webkit-filter: blur(10px);
+    filter: blur(10px);
+    height: 400px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -2000;
+    width: 100%;
+    transform: scale(0.999);
+    background: url("") center  / 100% 100% no-repeat;
+  /*  overflow: hidden;*/
+  
+}
+
+.user-nav {
+  background: white;
+  display: block;
+  margin-top: 60px;
+}
+
+.nav-pills {
+  margin-left: 30%;
+  margin-right: 40%;
+}
+
+.poke {
+  text-align: center;
+}
+
+.user-main-pic {
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    box-shadow: rgba(255, 255, 255, 0.0980392) 0px 0px 0px 0px;
+    z-index: 1300;
+    transition: all 1s ease-in-out 0.5s;
+    border-radius: 50%;
+    margin: 30px auto 0px;
+    background-position: 50% center;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.user-nav {
+  border-radius: 2px
+}
+
+ul.nav-pills > li {
+  padding: 10px;
+} 
+
+</style>
+
+<div>
+  <div class = "user-info-container">
+  <header class = "user-main-header">
+    <h2 class = "text-center">{{userEdit.firstname}}  {{userEdit.lastname}}</h2>
+  </header>
+    
+    <div class = "row">
+      <div class = "col-md-2">
+        
+        <div class = "poke"><h2>{{userEdit.gender}}</h2>Gender</div>
+        <div class = "poke"><h2>{{userEdit.location}}</h2>Location</div>
+        <div class = "poke"><h2>{{userEdit.birth | date: 'shortDate'}}</h2>Birthday</div>
+
+
+      </div>
+      <div class = "col-md-offset-7 col-md-3">
+        <div class = "poke"><h2>Bachata</h2>Favorite Class</div>
+        <div class = "poke"><h2>Chicago,IL</h2>Location</div>
+        <div class = "poke"><h2>{{userEdit.joined | date: 'shortDate'}}</h2>Joined</div>
+      </div>
+        <div class = "user-main-pic" style ="background-image: url({{userEdit.picture}})"></div>
+
+    </div>
+    
+        
+  <div class= "user-pic-background" style="background-image: url({{userEdit.picture}})"></div>
+  
+
+    
+ </div>
+
+</div>
+
+
+<div class = "user-nav">
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+</div>

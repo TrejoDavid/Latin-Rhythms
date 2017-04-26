@@ -1,0 +1,159 @@
+<style>
+	
+	body:-webkit-full-page-media {
+    background-color: purple !important;
+    border-radius: 30%;
+}
+</style>
+
+
+<div class = "row">
+	<div class = "col-md-12">
+		<h2 class = "text-center">Create Class</h2>
+	</div>
+</div>
+
+<div class = "row">
+	<div class = "col-md-3">
+		<h4 class = "text-center"><b>Select Instructor</b></h4>
+	    <select ng-model = "class.instructor" class="form-control">
+		  <option>Maricza Valentin</option>
+		  <option>Victor Monroy</option>
+		  <option>Javier Gonzalez</option>
+		  <option>Annet Kenneth</option>
+		  <option>Elisa Tavares</option>
+		  <option>Ken Amiro</option>
+		  <option>Jorge Luis</option>
+		  <option>Bruce Moreno</option>
+		  <option>Blanca Aviles</option>
+		</select>
+	</div>
+
+	<div class = "col-md-3">
+		<h4 class = "text-center"><b>Select Lesson</b></h4>
+	    <select ng-model = "class.lesson" class="form-control">
+			  <option>Bachata</option>
+			  <option>Salsa</option>
+			  <option>Cumbia</option>
+			  <option>Mambo</option>
+			  <option>ChaCha</option>
+		</select>
+	</div>
+
+	<div class = "col-md-3">
+		<h4 class = "text-center"><b>Lesson Level</b></h4>
+	    <select ng-model = "class.level" class="form-control">
+			  <option>Basic 1</option>
+			  <option>Basic 2</option>
+			  <option>Basic 3</option>
+			  <option>Basic 4</option>
+			  <option>Intermediate 1</option>
+			  <option>Intermediate 2</option>
+			  <option>Intermediate 3</option>
+			  <option>Intermediate 4</option>
+			  <option>Advance 1</option>
+			  <option>Advance 2</option>
+			  <option>Advance 3</option>
+		</select>
+	</div>
+
+		<div class = "col-md-3">
+		<h4 class = "text-center"><b>Day of the Week</b></h4>
+	    <select ng-model = "class.dayofweek" class="form-control">
+			  <option>Monday</option>
+			  <option>Tuesday</option>
+			  <option>Wednesday</option>
+			  <option>Thursday</option>
+			  <option>Friday</option>
+			  <option>Saturday</option>
+		</select>
+	</div>
+
+</div>
+
+
+<!-- Green Pea Room , Cinnabar Room, Chateu Room -->
+
+<div class = "row">
+	<div class = "col-md-3">
+		<form>
+	      <div class="form-group">
+	        <label for="exampleInputEmail1">Start Date</label>
+	        <input ng-model = "class.datestart" type="date" class="form-control" id="exampleInputEmail1" placeholder="Start Date">
+	      </div>
+	    </form>
+	</div>
+
+	<div class = "col-md-3">
+		<form>
+	      <div class="form-group">
+	        <label for="exampleInputEmail1">End Date</label>
+	        <input ng-model = "class.dateend" type="date" class="form-control" id="exampleInputEmail1" placeholder="End Date">
+	      </div>
+	    </form>		
+	</div>
+
+	<div class = "col-md-2">
+		<form>
+	      <div class="form-group">
+	        <label for="exampleInputEmail1">Class Time Start</label>
+	        <input ng-model = "class.time" type="time" class="form-control" id="exampleInputEmail1" placeholder="Pick Time">
+	      </div>
+	    </form>		
+	</div>
+
+	<div class = "col-md-2">
+		<form>
+	      <div class="form-group">
+	        <label for="exampleInputEmail1">Class Time End</label>
+	        <input ng-model = "class.timeend" type="time" class="form-control" id="exampleInputEmail1" placeholder="Pick Time">
+	      </div>
+	    </form>		
+	</div>
+
+	<div class = "col-md-2">
+		<form>
+	      <div class="form-group">
+	        <label for="exampleInputEmail1">Class Duration</label>
+	        		    <select ng-model = "class.duration" class="form-control">
+		 					<option>4 Weeks</option>
+		  					<option>3 Weeks</option>
+						</select>
+	      </div>
+	    </form>		
+	</div>
+
+    <div class = "col-md-offset-3 col-md-6">
+      <label>Description:</label><textarea ng-model = "class.description" class="form-control" rows="15" placeholder = "Enter Description"></textarea>
+         <button type="submit"  ng-click = "submit(class)" class="btn btn-primary center-block">Submit</button>
+    </div>
+
+</div>
+
+
+  <table class = "table table-striped">
+
+        <thead> 
+          <tr> 
+          	<th>View/Edit</th>
+            <th>Lesson</th> 
+            <th>Instructor</th> 
+            <th>Dates</th> 
+            <th>Times</th> 
+          </tr> 
+        </thead>
+    <tr ng-repeat = "view in views">
+    	<td class = "text-center"><a ng-href="/#/create-class/{{view._id}}" class = "glyphicon glyphicon-search"></a></td>   
+      <td>{{view.lesson}}: {{view.level}}</td>
+      <td>{{view.instructor}}</td>
+      <td>{{view.datestart | date: 'fullDate'}} - {{view.dateend | date: 'fullDate'}}</td>
+      <td>{{view.time | date: 'mediumTime' }}  - {{view.timeend | date: 'mediumTime' }} </td>
+      <td>{{view.location}}</td>
+    </tr>
+    
+  </table>
+
+
+
+
+

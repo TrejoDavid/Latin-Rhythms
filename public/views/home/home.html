@@ -1,0 +1,106 @@
+<style>
+  img {
+    width: 80%;
+  }
+
+
+  .tweets {
+    background: white;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .media-tweets {
+    background: url('https://abs.twimg.com/images/themes/theme1/bg.png');
+    background-size: contain;
+    margin: 10px;
+    border: 3px solid black;
+
+
+  }
+</style>
+
+<div class = "text-center main-header hidden-xs">Latin Rhythms</div>
+<div class = "row">
+    <div class = "col-md-6">
+        <img class = "img-responsive center-block main-pic-border" src="images/latin.jpg"/>
+<!--         <div class="jumbotron hidden-xs">
+            <div class="container">
+
+            </div>
+        </div> -->
+    </div> 
+    <div class = "col-md-6 tweets">
+        <h2 class = "text-center">Announcements</h2>
+<!--         <div class="list-group">
+          <a  class="list-group-item">
+            <h4 class="list-group-item-heading">New SEPTEMBER/OCTOBER 2015 Class Schedule..</h4>
+            <p class="list-group-item-text">
+               Classes Start Monday, September 14th!
+            </p>
+          </a>
+          <a  class="list-group-item">
+            <h4 class="list-group-item-heading">JOIN US FOR OUR SOCIALS...</h4>
+            <p class="list-group-item-text">
+               See you Friday, September 25th...
+            </p>
+          </a>
+
+          <a  class="list-group-item">
+            <h4 class="list-group-item-heading">Need a space for your next event?</h4>
+            <p class="list-group-item-text">
+               LATIN RHYTHMS GALLERY is available for you!!
+            </p>
+          </a>
+
+        </div> -->
+<div ng-repeat = "user in users">
+<!--  <h2>{{user.created_at | date: 'fullDate'}}</h2> -->
+  
+    <div class="media media-tweets">
+      <div class="media-left media-middle">
+        <a ng-href="http://www.twitter.com/{{user.user.screen_name}}">
+          <img class="media-object" ng-src="{{user.user.profile_image_url_https}}" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{user.user.name}}<a href = "http://www.twitter.com/{{user.user.screen_name}}">@{{user.user.screen_name}}</a>
+      </h4>
+        {{user.text}}
+      </div>
+    </div>
+</div>  
+
+    </div> 
+</div>
+
+<div class = "row" ng-controller="HomeCtrl">
+    <div class = "col-md-3">
+        <h2 class = "text-center">Classes</h2>
+        <div class="list-group">
+          <div ng-repeat="class in music">
+          <a href = "#/{{class.name}}"class="list-group-item text-center">{{class.name}}</a>
+          </div>
+        </div>
+    </div>
+
+    <div class = "col-md-9">
+     <h2 class = "text-center">Latin Dance Studio!</h2>
+     <p class = "hidden-sm hidden-md hidden-lg">From complete beginner to advanced salsero/salsera, we offer you the most comprehensive Salsa curriculum in Chicago. See for yourself why serious salsa students are switching to Latin Rhythms! But it doesn't stop at salsa... We also offer beginner to advanced Mambo, Cha Cha, Bachata, Cumbia, Merengue, Kids Latin & much more!</p>
+        
+
+
+        <div class="media hidden-xs">
+          <div class="media-left media-middle">
+<!--             <a href="#">
+              <img class="media-object" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-ash2/t31.0-8/775156_463740327021985_2140929391_o.jpg" width ="250px" height = "200px" alt="...">
+            </a> -->
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Learn or Improve Your Dancing at Chicago's Most Comprehensive Latin Dance Studio!</h4>
+                <p>From complete beginner to advanced salsero/salsera, we offer you the most comprehensive Salsa curriculum in Chicago. See for yourself why serious salsa students are switching to Latin Rhythms! But it doesn't stop at salsa... We also offer beginner to advanced Mambo, Cha Cha, Bachata, Cumbia, Merengue, Kids Latin & much more!</p>
+          </div>
+        </div>
+    </div>
+</div>
+

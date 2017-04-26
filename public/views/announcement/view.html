@@ -1,0 +1,56 @@
+<style>
+	input {
+/*    background: white;
+    color: black;
+    border: none;
+    font-size: 32px;
+    margin: 10px 0 10px 0;*/
+
+background-color: rgba(0,0,0,0.1);
+color: white;
+border: none;
+font-size: 32px;
+}
+
+input:focus {
+	border-bottom: 5px solid white;
+	background: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+</style>
+
+<div class = "row">
+	<div class = "col-md-12">
+		<h3>Title:</h3>
+		<input type="text" placeholder = "{{viewpost.title}}">
+
+	</div>	
+
+	<div class = "col-md-12">
+		<div class = "form-group">
+			<h3>Description:</h3>
+		<textarea class="form-control" id="announcementInputDescription"  rows="5" placeholder = "{{viewpost.description}}">{{viewpost.description}}</textarea>
+
+
+		</div>
+	</div>
+
+	<button class = "btn-primary" ng-click = "update(viewpost)">Save Changes <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></button>
+
+
+</div>
+
+
+ 
+
+
+
+        
+
+

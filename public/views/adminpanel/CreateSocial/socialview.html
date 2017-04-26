@@ -1,0 +1,65 @@
+<style>
+	.media {
+		background: white;
+		border-radius: 10px;
+	}
+</style>
+
+<div class = "row">
+	<div class = "col-md-5">
+			<h2 class = "text-center">Social Event</h2>
+        <div class="jumbotron">
+	  		<h3>{{viewsocial.name}}</h3>
+	  		<p class = "text-center">{{viewsocial.description}}</p>
+	  		<p class = "text-center"><a class="btn btn-primary btn-lg" href="#" role="button" >Register</a></p>
+		</div>
+	</div>
+    <div class = "col-md-5">
+      <h2 class = "text-center">Details</h2>
+      <!-- Event Time -->
+     <div class="media">
+  			<div class="media-left media-middle">
+    			<a href="#"><img class="media-object" src="https://cdn0.iconfinder.com/data/icons/iconico-3/1024/42.png"></a>
+  			</div>
+  			
+  			<div class="media-body">
+    			<h4 class="media-heading"><a href>{{viewsocial.date | date: 'fullDate'}}</a></h4>
+    		{{viewsocial.time | date:'shortTime' }}
+  			</div>
+	 </div>
+	<!--Event Location  -->
+    <div class="media">
+  		<div class="media-left media-middle">
+    		<a type="button" class="">
+      			<img class="media-object" src="http://image005.flaticon.com/1/svg/67/67347.svg" alt="...">
+    		</a>
+  		</div>
+
+  		<div class="media-body">
+    		<h4 class="media-heading"><a href="https://www.google.com/maps/place/{{viewsocial.location}}">{{viewsocial.location}}</a></h4>
+      		Social Mixer! Dance Bachata, Salsa, Merengua, and Cumbia!
+  		</div>
+	</div>
+
+    <div class="media">
+  		<div class="media-left media-middle">
+    		<a type="button" class="">
+      			<img class="media-object" src="http://simpleicon.com/wp-content/uploads/note-2.png" alt="...">
+    		</a>
+  		</div>
+
+  		<div class="media-body">
+    		<h4 class="media-heading"><a href="https://www.google.com/maps/place/{{viewsocial.location}}">Information</a></h4>
+      		{{viewsocial.description}}
+  		</div>
+	</div>
+      
+    </div> 
+</div>
+      
+  
+<!-- Picture // http://simpleicon.com/wp-content/uploads/note-2.png -->
+
+
+
+

@@ -1,0 +1,71 @@
+  <div class = "row">
+     <div class = "col-md-12">
+       <h2 class = "text-center">Create Social Event</h2>
+    </div>
+  </div>
+  
+  
+  <div class = "row">
+    <div class = "col-md-6">
+      <form>
+          <div class="form-group">
+            <label for="SocialNameInput">Event Name:</label>
+            <input ng-model = "social.name" type="text" class="form-control" id="SocialNameInput" >
+          </div>
+        
+           <div class="form-group">
+            <label for="SocialTimeInput">Date:</label>
+            <input ng-model = "social.date" type="date" class="form-control" id="SocialTimeInput">
+          </div>
+
+          <div class="form-group">
+            <label for="SocialTimeInput">Time:</label>
+            <input ng-model = "social.time" type="time" class="form-control" id="SocialTimeInput">
+          </div>
+
+          <div class="form-group">
+            <label for="SocialLocationInput">Location:</label>
+            <input ng-model = "social.location" type="text" class="form-control" id="SocialLocationInput">
+          </div>
+        
+          <div class="form-group">
+            <label for="SocialAddressInput">Address:</label>
+            <input ng-model = "social.address" type="text" class="form-control" id="SocialAddressInput">
+          </div>
+        
+          <div class="form-group">
+            <label for="SocialPictureInput">URL Event Picture:</label>
+            <input ng-model = "social.picture" type="text" class="form-control" id="SocialPictureInput">
+          </div>
+      </form>
+    </div>
+    
+    <div class = "col-md-6">
+      <label>Description:</label><textarea class="form-control" ng-model = "social.description" rows="15" placeholder = "Enter Description"></textarea>
+       <button type="submit"  ng-click = "post(social)" class="btn btn-primary center-block">Submit</button>
+    </div>
+    
+  </div> <!-- Row end -->
+
+<hr>
+
+  <table class = "table table-striped">
+
+        <thead> 
+          <tr> 
+            <th>Event</th> 
+            <th>Time</th> 
+            <th>Location</th> 
+            <th>Address</th> 
+            <th>Edit</th>
+          </tr> 
+        </thead>
+    <tr ng-repeat = "event in events">
+      <td>{{event.name}}</td>
+      <td>{{event.time | date: 'fullDate'}}</td>
+      <td>{{event.location}}</td>
+      <td>{{event.address}}</td>
+      <td><a ng-href="/#/create-social/{{event._id}}" class = "glyphicon glyphicon-search"></a></td>   
+    </tr>
+    
+  </table>

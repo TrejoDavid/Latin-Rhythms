@@ -1,0 +1,132 @@
+
+<div ng-show = "currentUser.roles.indexOf('admin') > -1">
+	<h2>Admin Panel</h2>
+ 	Registered Users: {{users.length}}
+
+<div class = "row">
+	<div class = "col-md-3">
+
+
+	<div class="list-group">
+  		<a href="#/announcement" class="list-group-item text-center">Create Announcement</a>
+  		<a href="#/create-class" class="list-group-item text-center">Create Class</a>
+  		<a href="#/create-social" class="list-group-item text-center">Create Social Event</a>
+  		<a href="#/edit-user" class="list-group-item text-center">Edit User</a>
+	</div>
+
+	</div>
+</div>
+
+
+</div>
+
+<div ng-show = "currentUser.roles.indexOf('student') > -1">
+
+	<div class = "container-fluid">
+		<div class="well well-lg">
+			<div class = "row">
+				<div class = "col-md-2">
+					<h4>Hello, {{currentUser.username}}</h4>
+					<img src="http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png" alt="">
+				</div>
+				<div class = "col-md-6">
+					<h4>Achievements</h4>
+			<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://media5.spectable.com/image/image/N/stage-danse-bachata-danses-ligne_286055.jpg?1407857571" alt="...">
+    </a>
+     <div class ="text-center">Bachata 1</div>
+  </div>
+
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://i278.photobucket.com/albums/kk112/peyplace/Funny/a1aDanceSalsa.gif#salsa%20dance%20gif%20159x120" alt="...">
+    </a>
+     <div class ="text-center">Bachata 1</div>
+  </div>
+
+
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://beyonddancingsarasota.com/latin-ballroom-instruction/wp-content/uploads/2013/12/bachata.jpg" alt="...">
+    </a>
+     <div class ="text-center">Bachata 1</div>
+  </div>
+
+
+
+
+
+</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class = "row">
+	<div class = "col-md-6">
+  		<div class="panel panel-default">  
+  			<div class="panel-heading text-center">Current Classes</div>  
+  				<div class = "row">
+  					<div class = "col-md-5">
+  						<img src="https://s-media-cache-ak0.pinimg.com/236x/48/cc/d6/48ccd6e3d8bb87e880546643ce458976.jpg" alt="" class = "img-circle">
+  					</div>
+  					<div class = "col-md-6">
+  		<ul class="list-group">
+  <li class="list-group-item"><b>Instructor:</b> Rebecca Ramirez</li>
+  <li class="list-group-item"><b>Class:</b> Bachata 1</li>
+  <li class="list-group-item"><b>Dates:</b> 5/3/16, 5/12/16,5/23/16</li>
+</ul>
+
+<div class = "btn btn-primary center-block"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  View Class </div>
+  					</div>
+  				</div>
+			</div>
+	</div>
+
+	<div class = "col-md-6">
+
+	
+  <div class="panel panel-default">  
+  <div class="panel-heading text-center">Classes Taken</div>  
+  <table class="table"> 
+    <thead> 
+      <tr> 
+        <th class = "text-center">Date</th> 
+        <th class = "text-center">Class</th> 
+        <th class = "text-center">Teacher</th> 
+        <th class = "text-center">View Class</th> 
+      </tr> 
+    </thead> 
+    
+    <tbody> 
+      <tr ng-repeat = "class in classes"> 
+        <th scope="row" class = "text-center">{{class.date}}</th> 
+        <td class = "text-center" ng-repeat = "classInfo in class.info"><a href="{{classInfo.link}}">{{classInfo.name}}</a></td> 
+        <td class = "text-center"><a href="#">{{class.teacher}}</a></td> 
+        <td class = "text-center"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td> 
+      </tr>    
+    </tbody> 
+    
+  </table> 
+</div>
+
+
+
+	</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+

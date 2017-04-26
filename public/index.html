@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+  </head>
+  
+  <body ng-app="latinRhythmsApp">
+
+<nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-md hidden-lg">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class = "text-center main-header">Latin Rhythms</div>
+
+
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left nav-position">
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right nav-position">
+                <li class="dropdown text-center">
+                 <a href="#home">Home</a>
+                </li>
+                <li class="dropdown text-center">
+                  <a href="#registration">Register</a>
+                </li>
+                <li class="dropdown text-center">
+                  <a href="#login">Login</a>
+                </li>
+                <li class="dropdown text-center">
+                  <a href="#profile">Profile</a>
+                </li>
+                <li class="dropdown text-center">
+                  <a href="#/about/">About</a>
+                </li>                 
+                <li class="dropdown text-center">
+                  <a href="#/social/">Social Events</a>
+                </li>                
+                <li class="dropdown text-center">
+                  <a href="#/contact">Contact</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" ng-controller = "NavCtrl">
+                <li class="sidebar-brand">
+                    <img class = "img-responsive center-block" src = "views/images/latin-logo.png">
+                </li>
+                <li class = "text-center latin-name">Latin Rhythms</li>
+                <li class = "text-center">
+                    <a href="#/">Home</a>
+                </li>
+
+                <span ng-show = "!currentUser">
+                    <li class = "text-center">
+                        <a href="#registration">Register</a>
+                    </li>
+
+                    <li class = "text-center">
+                         <a href="#login">Login</a>
+                    </li>  
+                </span>
+
+                <li class = "text-center">
+                    <a href="#/classes/">Class Policy</a>
+                </li>
+                <li class = "text-center">
+                    <a href="#/social/">Social Events</a>
+                </li>                
+                <li class = "text-center">
+                    <a href="#/class-schedule">Classes</a>
+                </li>
+
+                <span ng-show = "currentUser">
+                    <li class = "text-center">
+                        <a href="#profile">Profile</a>
+                    </li>
+                    <li class = "text-center">
+                        <a href="#logout" ng-click="logout()">Logout</a>
+                    </li>
+                </span>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid"> 
+                
+              <div ng-view=""></div>
+
+            </div>
+         </div> 
+
+        <!-- Page Content -->
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+    <!-- bower:js -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+    <script src="js/instafeed.min.js"></script>
+
+
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- Angular Routes Config and Initialization -->
+        <script src="js/app.js"></script>
+
+        <!-- Angular Controllers -->
+        <script src="views/home/HomeCtrl.js"></script>
+        <script src="views/login/login.js"></script>
+        <script src="views/registration/registration.js"></script>
+        <script src="views/profile/profile.js"></script>
+        <script src="views/social/social.js"></script>
+        <script src="views/announcement/announcement.js"></script>
+        <script src="views/ClassSchedule/class-schedule.js"></script>
+        <script src="views/Class/class.js"></script>
+        
+        <!-- Admin Panel Section -->
+        <script src="views/adminpanel/CreateSocial/createsocial.js"></script>
+        <script src="views/adminpanel/CreateClass/create-class.js"></script>
+        <script src="views/adminpanel/EditUser/edit-user.js"></script>
+
+        <script src="views/classview/classview.js"></script>
+        <script src="views/Twitter/twitter.js"></script>
+        <script src="views/Class/class.js"></script>
+
+
+       
+<!--     var feed = new Instafeed({
+        get: 'user',
+        tagName: '#pokemon',
+        userId: 641458972,
+        accessToken: '641458972.c308c23.3c1026aecef745658b760c6de8479f5d',
+        clientId: 'c308c23735764b2b8d55d733979c4667',
+        resolution: 'low_resolution',
+        template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
+
+    });
+    feed.run(); -->
+
+
+        <!-- // <script src="registration/registration.js"></script> -->
+        <!-- // <script src="scripts/controllers/about.js"></script> -->
+        <!-- endbuild -->
+</body>
+</html>
